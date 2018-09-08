@@ -97,18 +97,26 @@
 @endsection
 
 @section('scripts')
-<script>
-    $('#deletemodal').on('show.bs.modal', function(event) {
-        var button = $(event.relatedTarget)
-        var post_id = button.data('postid')
-        var modal = $(this)
-        modal.find('.modal-body #post_id').val(post_id)
-    });
 
-    $(function() {
-        setTimeout(function() {
-            $(".potea").slideUp("slow");
-        }, 5000);
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+    $( document ).ready(function() {
+        $('#deletemodal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var post_id = button.data('postid')
+            var modal = $(this)
+            modal.find('.modal-body #post_id').val(post_id)
+        });
+
+        $(function() {
+            setTimeout(function() {
+                $(".potea").slideUp("slow");
+            }, 5000);
+        });
     });
 </script>
 @endsection
